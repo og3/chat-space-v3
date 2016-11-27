@@ -20,7 +20,7 @@ has_many : messages
 has_many : group_users  
 
 ## table  
-chat_room_name :string, null: false, add_index: groups, group_name  
+name :string, null: false, add_index: groups, group_name  
 
 
 
