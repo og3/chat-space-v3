@@ -6,7 +6,7 @@ has_many : group_users
 has_many : groups, through: group_users
 
 ## table
-user_name :string, null: false, add_index: users, name
+name :string, null: false, add_index: users, name
 email :string, null: false, unique: true, add_index: users, email
 password :string, null: false
 
