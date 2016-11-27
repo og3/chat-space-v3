@@ -45,6 +45,5 @@ belongs_to : user
 ## table
 message :text
 image :string
-group_id :string
 references :user, foreign_key: true
 references :group, foreign_key: true
