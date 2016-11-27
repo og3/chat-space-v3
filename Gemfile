@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
+group :development do
 gem 'erb2haml'
+end
 gem 'haml-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
