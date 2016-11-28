@@ -3,6 +3,7 @@ class CreateMessages < ActiveRecord::Migration[5.0]
     create_table :messages do |t|
       t.text :message
       t.string :image
+
       t.timestamps
     end
   end
