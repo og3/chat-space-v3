@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  root "messages#chat"
+  root "messages#index"
 end

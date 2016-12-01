@@ -1,4 +1,4 @@
 class MessagesController < ApplicationController
-  def chat
+  def index
   end
 end
