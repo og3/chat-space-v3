@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'font-awesome-sass'
+gem "font-awesome-rails"
 
 gem 'haml-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

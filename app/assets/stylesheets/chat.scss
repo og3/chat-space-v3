@@ -1,0 +1,176 @@
+$white: white;
+$black: black;
+$skyblue: #38AEF0;
+$liteskyblue: #38aef0;
+$navyblue: #2f3e51;
+$darknavyblue: #253141;
+$gray: #ddd;
+$litegray: #999;
+
+.chat {
+  height: 100%;
+  width: 100%;
+
+  &__flash_message {
+    width: 100%;
+    height: 30px;
+    color: $white;
+    background-color: $skyblue;
+    text-align: center;
+  }
+
+  &__side_bar {
+    width: 300px;
+    height: 100%;
+    background-color: $navyblue;
+    float: left;
+
+     &__user_info {
+        background-color: $darknavyblue;
+        font-size: 16px;
+        height: 100px;
+        margin-bottom: 20px;
+        padding: 0px 20px;
+        & p {
+          color: $white;
+          padding-top: 40px;
+          float: left;
+        }
+
+        &__icons__icon {
+        float: right;
+        height: 50px;
+        width: 30px;
+        color: $white;
+        padding-top: 40px;
+          & a {
+          float: right;
+          font-size: 16px;
+          color: $white;
+          & i {
+            float: right;
+            padding-left: 5px;
+          }
+        }
+      }
+     }
+
+     &__groups {
+      color: $white;
+      padding: 0px 20px;
+        &__group_name {
+          font-size: 15px;
+          margin-bottom: 5px;
+        }
+        &__group_message {
+          font-size: 11px;
+          margin-bottom: 40px;
+        }
+     }
+  }
+
+  &__main {
+    height: 100%;
+    width: calc(100% - 300px);
+    background-color: $white;
+    float: left;
+
+    &__header {
+      height: 100px;
+      width: 100%;
+      background-color: $white;
+      border-bottom: 1px solid #eee;
+      float: left;
+      &__group_info {
+        padding: 0px 40px;
+        float: left;
+        &__group_name {
+          font-size: 20px;
+          color: $black;
+          margin: 35px 0px 15px;
+        }
+        &__group_member {
+          font-size: 12px;
+          color: $litegray;
+        }
+      }
+      &__edit_button {
+        float: right;
+        display: inline-block;
+        margin: 28px 40px 0px 0px;
+        padding-right: 20px;
+        padding-left: 20px;
+        line-height: 40px;
+        color: $liteskyblue;
+        font-size: 14px;
+        border: 2px solid;
+      }
+    }
+
+    &__body {
+      width: calc(100% - 80px);
+      height: calc(100% - 190px);
+      float: left;
+      overflow-y: scroll;
+      padding: 0px 40px;
+      &__chat {
+        margin: 46px 0px 40px;
+        float: left;
+        &__user_name {
+          float: left;
+          font-size: 15px;
+          margin-right: 10px;
+        }
+        &__time_stamp {
+          float: left;
+          font-size: 15px;
+        }
+        &__message {
+          font-size: 15px;
+          margin-top: 10px;
+        }
+      }
+    }
+
+    &__footer {
+      float: left;
+      background-color: $gray;
+      width: 100%;
+      height: 90px;
+
+      &__type_message {
+        float: left;
+        width: 80%;
+        height: 25px;
+        margin: 25px 0px 20px 20px;
+        padding: 10px 0px;
+        line-height: 20px;
+        display: block;
+        background-color: $white;
+        & p {
+          float: left;
+        }
+        &__icon {
+          float: right;
+          color: $black;
+          font-size: 20px;
+          margin-right: 20px;
+          margin-top: 5px;
+        }
+      }
+      &__send_button {
+        float: right;
+        display: inline-block;
+        width: 100px;
+        margin: 25px 30px 10px 0px;
+        line-height: 45px;
+        color: $white;
+        background-color: $liteskyblue;
+        text-align: center;
+        border: none;
+        padding: 0;
+
+      }
+    }
+  }
+}
