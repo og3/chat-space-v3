@@ -6,3 +6,5 @@
     = link_to "編集", edit_user_registration_path
     %li 
     = link_to "チャット画面", 'message'
+    %li 
+    = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
