@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'devise', '4.2.0'
+
 gem 'font-awesome-sass'
 gem "font-awesome-rails"
 
