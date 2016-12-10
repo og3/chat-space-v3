@@ -10,18 +10,19 @@
         =f.text_field :name, class: "chat-group-form__input", id: "chat_group_name", placeholder: "グループ名を入力してください"
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        = f.label :name,"チャットメンバーを追加", class: "chat-group-form__label"
+        = f.label :user_ids,"チャットメンバーを追加", class: "chat-group-form__label"
       .chat-group-form__field--right
         .chat-group-form__search.clearfix
-          %input#user-search-field.chat-group-form__input{:placeholder => "追加したいユーザー名を入力してください", :type => "text"}/
+          .user-search-field.chat-group-form__input
+            = f.collection_check_boxes :user_ids, User.all, :id, :name, :placeholder => "追加したいユーザー名を入力してください"
         #user-search-result
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        = f.label :group_user,"チャットメンバー", class: "chat-group-form__label"
+        = f.label "チャットメンバー", class: "chat-group-form__label"
       .chat-group-form__field--right
         #chat-group-users
           #chat-group-user-22.chat-group-user.clearfix
-            = f.collection_check_boxes :user_ids, User.all, :id, :name
+            = current_user.name
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right
