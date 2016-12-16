@@ -12,9 +12,11 @@
           %i.fa.fa-pencil-square-o.fa-lg
     %ul.chat__side_bar__groups
       - @groups.each do |group|
-        %li.chat__side_bar__groups__group_name  
-          = link_to group.name, group_path(group.id)
-          %li.chat__side_bar__groups__group_message 最新メッセージ
+        %li.chat__side_bar__groups__group
+          = link_to group_path(group.id) do
+            %p.chat__side_bar__groups__group_name  
+              = group.name
+            %p.chat__side_bar__groups__group_message 最新メッセージ
 
   .chat__main
 
