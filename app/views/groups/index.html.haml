@@ -12,12 +12,7 @@
         = link_to new_group_path(current_user) do
           %i.fa.fa-pencil-square-o.fa-lg
     %ul.chat__side_bar__groups
-      - @groups.each do |group|
-        %li.chat__side_bar__groups__group
-          = link_to group_path(group) do
-            %p.chat__side_bar__groups__group_name  
-              = group.name
-            %p.chat__side_bar__groups__group_message 最新メッセージ
+      = render partial: "group", collection: @groups
 
   .chat__main
 
