@@ -3,16 +3,16 @@
   .chat__side_bar
 
     .chat__side_bar__user_info
-      %p ユーザー名
+      %p 
+        = current_user.name
       .chat__side_bar__user_info__icons__icon__edit
-        = link_to edit_user_registration_path do
+        = link_to edit_user_registration_path(current_user) do
           %i.fa.fa-cog.fa-lg
       .chat__side_bar__user_info__icons__icon__edit
         = link_to new_group_path do
           %i.fa.fa-pencil-square-o.fa-lg
     %ul.chat__side_bar__groups
-      %li.chat__side_bar__groups__group_name グループ名
-      %li.chat__side_bar__groups__group_message 最新メッセージ
+      = render @groups
 
   .chat__main
 
@@ -20,8 +20,6 @@
       %ul.chat__main__header__group_info
         %li.chat__main__header__group_info__group_name グループ名
         %li.chat__main__header__group_info__group_member グループメンバー
-      .chat__main__header__edit_button Edit
-
     .chat__main__body
       %ul.chat__main__body__chat
         %li.chat__main__body__chat__user_name user_name
