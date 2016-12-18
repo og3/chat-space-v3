@@ -12,7 +12,7 @@
         = link_to new_group_path do
           %i.fa.fa-pencil-square-o.fa-lg
     %ul.chat__side_bar__groups
-      = render partial: "group", collection: @groups
+      = render "group", collection: @groups
 
   .chat__main
 
