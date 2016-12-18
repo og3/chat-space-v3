@@ -12,7 +12,7 @@
         = link_to new_group_path do
           %i.fa.fa-pencil-square-o.fa-lg
     %ul.chat__side_bar__groups
-      = render "group", collection: @groups
+      = render 'group', collection: @groups
 
   .chat__main
 
@@ -24,7 +24,7 @@
           メンバー:
           - @group.users.each do |user|
             = user.name
-      = link_to 'Edit', edit_group_path(@group.id), class: "chat__main__header__edit_button"
+      = link_to 'Edit', edit_group_path(@group), class: 'chat__main__header__edit_button'
       
     .chat__main__body
       %ul.chat__main__body__chat
@@ -35,7 +35,7 @@
     .chat__main__footer
       .chat__main__footer__type_message
         %p type messages
-        %a.chat__main__footer__type_message__icon{ :href => "" }
+        %a.chat__main__footer__type_message__icon{ :href => '' }
           %i.fa.fa-picture-o
       .chat__main__footer__send_button send
       
