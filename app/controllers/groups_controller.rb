@@ -25,7 +25,7 @@ class GroupsController < ApplicationController
 
   def update
     if @group.update(group_params)
-      redirect_to group_path(@group), flash: { notice: 'グループ情報が変更されました。'}
+      redirect_to group_path(@group), notice: 'グループ情報が変更されました。'
     else
       render :edit
       flash[:alert] = 'グループ情報の変更に失敗しました'
