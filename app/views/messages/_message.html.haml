@@ -1,8 +1,7 @@
-- @messages.each do |message|
-  %li.chat__main__body__chat__set
-    %p.chat__main__body__chat__set__name
-      = message.user.name
-    %p.chat__main__body__chat__set__time_stamp 
-      = message.created_at
-    %p.chat__main__body__chat__set__message 
-      = message.message
+%li.chat__main__body__chat__set
+  %p.chat__main__body__chat__set__name
+    = message.user.name
+  %p.chat__main__body__chat__set__time_stamp 
+    = message.created_at
+  %p.chat__main__body__chat__set__message 
+    = message.message
