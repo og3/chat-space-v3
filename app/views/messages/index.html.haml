@@ -1,0 +1,37 @@
+.chat
+
+  .chat__side_bar
+
+    .chat__side_bar__user_info
+      %p 
+        = current_user.name
+      .chat__side_bar__user_info__icons__icon__edit
+        = link_to edit_user_registration_path(current_user) do
+          %i.fa.fa-cog.fa-lg
+      .chat__side_bar__user_info__icons__icon__edit
+        = link_to new_group_path do
+          %i.fa.fa-pencil-square-o.fa-lg
+    %ul.chat__side_bar__groups
+      = render 'groups/group'
+
+  .chat__main
+    .chat__main__header
+      %ul.chat__main__header__group_info
+        %li.chat__main__header__group_info__group_name 
+          = @group.name
+        %li.chat__main__header__group_info__group_member
+          メンバー:
+          - @group.users.each do |user|
+            = user.name
+      = link_to 'Edit', edit_group_path(@group), class: 'chat__main__header__edit_button'
+      
+    .chat__main__body
+      %ul.chat__main__body__chat
+        = render partial: 'messages/message', collection: @messages
+
+    .chat__main__footer
+      = form_for [@group, @message] do |f|
+        = f.text_area :message, placeholder: "type a message", class: 'chat__main__footer__type_message'
+        %a.chat__main__footer__type_message__icon{ :href => '' }
+          %i.fa.fa-picture-o
+        = f.submit value: "Send", class: 'chat__main__footer__send_button '
