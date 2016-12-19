@@ -28,14 +28,11 @@
       
     .chat__main__body
       %ul.chat__main__body__chat
-        %li.chat__main__body__chat__user_name user_name
-        %li.chat__main__body__chat__time_stamp timestamp
-        %li.chat__main__body__chat__message message
+        = render partial: 'message', collection: @messages
 
     .chat__main__footer
-      .chat__main__footer__type_message
-        %p type messages
+      = form_for [@group, @message] do |f|
+        = f.text_area :message, placeholder: "type a message", class: 'chat__main__footer__type_message'
         %a.chat__main__footer__type_message__icon{ :href => '' }
           %i.fa.fa-picture-o
-      .chat__main__footer__send_button send
-      
+        = f.submit value: "Send", class: 'chat__main__footer__send_button '
