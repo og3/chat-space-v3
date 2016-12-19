@@ -2,7 +2,6 @@ class MessagesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @group_name = current_user.groups
     @group = Group.find(params[:group_id]) #グループのページにアクセスした時に、そのグループの番号を受け取る
     @messages = @group.messages #上で受け取ったグループの番号に関連したmessageテーブルの値を取得する
     @groups = current_user.groups #ログイン中のユーザーが属するグループの情報を持ってくる
