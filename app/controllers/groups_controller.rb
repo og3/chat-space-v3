@@ -33,7 +33,10 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @groups = current_user.groups
+    @group = Group.find(params[:id]) #グループのページにアクセスした時に、そのグループの番号を受け取る
+    @groups = current_user.groups #ログイン中のユーザーが属するグループの情報を持ってくる
+    @message = Message.new #form_forに入力される値を受け取るための箱を用意する
+    @messages = @group.messages #上で受け取ったグループの番号に関連したmessageテーブルの値を取得する
   end
 
   private
