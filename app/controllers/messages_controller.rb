@@ -13,8 +13,8 @@ class MessagesController < ApplicationController
     @group_id = params[:group_id]  #リダイレクトをするために、現在のページのgroup_idを取得する
     if @message.save
       redirect_to group_messages_path(@group_id)
-    else redirect_to :back, alert: 'メッセージを入力してください'
-
+    else 
+      redirect_to :back, alert: 'メッセージを入力してください'
     end
 
   end
