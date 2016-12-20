@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
     @message = Message.new #form_forに入力される値を受け取るための箱を用意する
   end
 
-  def create
+  def create #ここでの変数はviewでは使うことがないので、ローカル変数にする
     message = Message.new(create_params) #入力された値を保存する
     group_id = params[:group_id]  #リダイレクトをするために、現在のページのgroup_idを取得する
     if message.save
