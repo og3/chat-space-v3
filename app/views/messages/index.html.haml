@@ -1,4 +1,4 @@
-.chat
+.chat.clearfix
 
   .chat__side_bar
     .chat__side_bar__user_info
@@ -23,14 +23,15 @@
           - @group.users.each do |user|
             = user.name
       = link_to 'Edit', edit_group_path(@group), class: 'chat__main__header__edit_button'
-      
+
     .chat__main__body
       %ul.chat__main__body__chat
         = render partial: 'messages/message', collection: @messages
 
     .chat__main__footer
       = form_for [@group, @message] do |f|
-        = f.text_area :message, placeholder: "type a message", class: 'chat__main__footer__type_message'
-        %a.chat__main__footer__type_message__icon{ :href => '' }
-          %i.fa.fa-picture-o
-        = f.submit value: "Send", class: 'chat__main__footer__send_button '
+        = f.text_area :message, placeholder: "type a message", class: 'chat__main__footer__type_message' do
+          %label.chat__footer__file
+            = f.file_field :image
+            %i.fa.fa-image
+        = f.submit value: "Send", class: 'chat__main__footer__send_button'
