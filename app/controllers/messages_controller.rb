@@ -8,10 +8,10 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(create_params) #入力された値を保存する
-    @group_id = params[:group_id]  #リダイレクトをするために、現在のページのgroup_idを取得する
-    if @message.save
-      redirect_to group_messages_path(@group_id)
+    message = Message.new(create_params) #入力された値を保存する
+    group_id = params[:group_id]  #リダイレクトをするために、現在のページのgroup_idを取得する
+    if message.save
+      redirect_to group_messages_path(group_id)
     else 
       redirect_to :back, alert: 'メッセージを入力してください'
     end
