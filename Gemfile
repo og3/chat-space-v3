@@ -58,5 +58,8 @@ group :development do
   gem 'factory_girl_rails', "~> 4.4.1"
 end
 
+group :test do
+  gem 'faker' #emailや電話番号、名前などのダミーデータを作成するためのGemです。インストール後、factory_girlの設定ファイルの中でFakerのメソッドを利用し、ダミーデータを生成します。
+end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
