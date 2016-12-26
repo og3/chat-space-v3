@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'rails-i18n' #rspecでのテスト時にtranslation missingというエラーが出るため、言語に対応させるために導入。
 
 gem 'devise', '4.2.0'
 
