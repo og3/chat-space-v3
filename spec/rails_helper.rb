@@ -65,5 +65,5 @@ RSpec.configure do |config|
 
   #deviseの読み込み
   config.include Devise::TestHelpers, :type => :controller
-  config.include ControllerMacros, :type => :controller
+  config.include Devise::TestHelpers, :type => :view
 end
