@@ -1,7 +1,10 @@
 FactoryGirl.define do
 
   factory :message do
-    message "test" #buildで呼び出した時に、このメッセージを持ったインスタンスができる
+    message         "chat-space"
+    image        ""
+    user    #users.rbの中身を継承
+    group   #groups/rbの中身を継承
   end
 
 end

@@ -9,10 +9,8 @@ describe Message do #Messageモデルのテストであることの宣言
     end
 
     it "is valid with a message" do #messageが存在していたら投稿できる
-      user = create(:user)
-      group = create(:group)
-      message = build(:message, user_id: user.id, group_id: group.id)
-      expect(message).to be_valid #be_validはexpectの引数にしたインスタンスが全てのバリデーションをクリアする場合にパスするマッチャ
+      message = build(:message)
+      expect(message).to be_valid
     end
   end
 end
