@@ -3,6 +3,7 @@ ENV["RAILS_ENV"] ||= 'test'
 require 'spec_helper'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
+require 'devise'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -47,10 +48,22 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
-  config.include FactoryGirl::Syntax::Methods #factory_girlの記法の省略
-  [:controller, :view, :request].each do |type| #gem rails_controller_testingを使うための記述
+
+  #factory_girlの記法の省略
+  config.include FactoryGirl::Syntax::Methods 
+
+  #gem rails_controller_testingを使うための記述
+  [:controller, :view, :request].each do |type| 
     config.include ::Rails::Controller::Testing::TestProcess, :type => type
     config.include ::Rails::Controller::Testing::TemplateAssertions, :type => type
     config.include ::Rails::Controller::Testing::Integration, :type => type
   end
+
+  #エラーDevise::MissingWarden:を回避するため
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
+
+  #deviseの読み込み
+  config.include Devise::TestHelpers, :type => :controller
+  config.include ControllerMacros, :type => :controller
 end
