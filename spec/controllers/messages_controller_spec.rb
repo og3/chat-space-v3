@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe MessagesController do
 
-    # userをFactoryGirlで作る
+    # user,groupをFactoryGirlで作る
     let(:user) { create(:user) }
     let(:group) { create(:group) }
     # 作ったユーザでログインする
@@ -10,33 +10,31 @@ describe MessagesController do
       sign_in user
     end
 
+    before do
+      get :index, group_id: group.id
+    end
 
   describe 'GET #index' do
     #indexの値が正確かどうか
     it "assigns the requested contact to messages" do
       messages = create_list(:message, 3, group_id: group.id)
-      get :index, group_id: group.id #set_groupを動かす際にgroup.idが必要。
       expect(assigns(:messages)).to match(messages)
     end
     #indexのviewに飛べるかどうか
     it "renders the :index template" do
-      get :index, group_id: group.id
       expect(response).to render_template :index
     end
   end
 
   describe 'POST #create' do
-
     #createアクションで投稿を保存できた場合
     it "success to save" do
-      get :index, group_id: group.id
       expect {
         post :create, group_id: group.id, message: attributes_for(:message)
       }.to change(Message, :count).by(1)
     end
     #createアクションで投稿を保存できなかった場合
     it "failure to save" do
-      get :index, group_id: group.id
       expect {
         post :create, group_id: group.id, message: attributes_for(:message, message: "")
       }.not_to change(Message, :count)
