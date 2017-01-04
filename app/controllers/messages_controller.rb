@@ -3,8 +3,8 @@ class MessagesController < ApplicationController
   before_action :set_group, only:[:index]
 
   def index
-    @messages = @group.messages #上で受け取ったグループの番号に関連したmessageテーブルの値を取得する
     @message = Message.new #form_forに入力される値を受け取るための箱を用意する
+    @messages = @group.messages #set_groupで受け取ったグループの番号に関連したmessageテーブルの値を取得する
   end
 
   def create #ここでの変数はviewでは使うことがないので、ローカル変数にする
@@ -12,7 +12,7 @@ class MessagesController < ApplicationController
     if message.save
       redirect_to group_messages_path(params[:group_id]) #アドレスに入力されているgroup_idのページにリダイレクトする
     else 
-      redirect_to :back, alert: 'メッセージを入力してください'
+      redirect_to group_messages_path, alert: 'メッセージを入力してください'
     end
 
   end

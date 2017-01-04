@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'rails-i18n' #rspecでのテスト時にtranslation missingというエラーが出るため、言語に対応させるために導入。
 
 gem 'devise', '4.2.0'
 
@@ -44,6 +44,9 @@ group :development, :test do
   gem 'pry-doc'    # methodを表示
   gem 'pry-byebug' # デバッグを実施(Ruby 2.0以降で動作する)
   gem 'pry-stack_explorer' # スタックをたどれる
+  gem 'rails-controller-testing'
+  gem 'rspec-rails', '~>3.1.0'
+  gem 'factory_girl_rails', "~> 4.4.1"
 end
 
 group :development do
@@ -56,5 +59,8 @@ group :development do
   gem 'erb2haml'
 end
 
+group :test do
+  gem 'faker' #emailや電話番号、名前などのダミーデータを作成するためのGemです。インストール後、factory_girlの設定ファイルの中でFakerのメソッドを利用し、ダミーデータを生成します。
+end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
