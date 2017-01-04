@@ -41,9 +41,14 @@ describe MessagesController do
         post :create, group_id: group.id, message: attributes_for(:message, message: "")
       }.not_to change(Message, :count)
     end
-    #createアクションの後でindexアクションにリダイレクトできるかどうか
-    it "redirects to messages#index" do
+    #saveに成功した後でindexアクションにリダイレクトできるかどうか
+    it "success to save message and redirects to messages#index" do
       post :create, group_id: group.id, message: attributes_for(:message)
+      expect(response).to redirect_to group_messages_path
+    end
+    #saveに失敗した後でindexアクションにリダイレクトできるかどうか
+    it "failure to save message and redirects to messages#index" do
+      post :create, group_id: group.id, message: attributes_for(:message, message: "")
       expect(response).to redirect_to group_messages_path
     end
   end
