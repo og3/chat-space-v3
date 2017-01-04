@@ -2,7 +2,14 @@ require 'rails_helper'
 
 describe MessagesController do
 
-  let(:group) { create(:group) }
+    # userをFactoryGirlで作る
+    let(:user) { create(:user) }
+    let(:group) { create(:group) }
+    # 作ったユーザでログインする
+    before do
+      sign_in user
+    end
+
 
   describe 'GET #index' do
     #indexの値が正確かどうか
@@ -19,12 +26,6 @@ describe MessagesController do
   end
 
   describe 'POST #create' do
-    # userをFactoryGirlで作る
-    let(:user) { create(:user) }
-    # 作ったユーザでログインする
-    before do
-      sign_in user
-    end
 
     #createアクションで投稿を保存できた場合
     it "success to save" do
