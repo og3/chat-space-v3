@@ -29,8 +29,8 @@
         = render partial: 'messages/message', collection: @messages
 
     .chat__main__footer
-      = form_for [@group, @message], html: { class: 'form js-form' } do |f|
-        = f.text_area :message, placeholder: "type a message", class: 'chat__main__footer__type_message js-form__text-area' do
+      = form_for [@group, @message], html: { class: 'form message-form' } do |f|
+        = f.text_area :message, placeholder: "type a message", class: 'chat__main__footer__type_message message-form__text-area' do
           %label.chat__footer__file
             = f.file_field :image
             %i.fa.fa-image
