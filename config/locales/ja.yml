@@ -136,7 +136,7 @@ ja:
     select:
       prompt: 選択してください。
     submit:
-      create: 登録する
+      create: Send #Sendボタンを押した後にdisableでボタンの表示が切り替わらないようにする
       submit: 保存する
       update: 更新する
   number:
