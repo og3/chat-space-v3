@@ -21,10 +21,9 @@ class MessagesController < ApplicationController
           }
         } #入力されたデータを変数に入れてJSの部分に返す
       end
-    else 
+    else
       redirect_to group_messages_path, alert: 'メッセージを入力してください'
     end
-
   end
 
   private

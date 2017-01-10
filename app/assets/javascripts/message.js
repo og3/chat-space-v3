@@ -1,6 +1,6 @@
 $(function() {
   function buildHTML(adddata) {
-// 新規に入力された値を入れるhtmlを新規に作る
+// 新規に入力された値を入れるhtmlを新規に作る。記法はHTMLで書く。
     var html =
       '<li class="chat__main__body__chat__set">'              +
         '<p class="chat__main__body__chat__set__name">'       +
