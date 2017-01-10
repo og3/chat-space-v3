@@ -20,8 +20,8 @@ $(function() {
   $('.chat__main__footer__send_button').click('submit', function(e) {
 //フォームが送信された時に、デフォルトだとフォームを送信するための通信がされてしまうので、preventDefault()を使用してデフォルトのイベントを止める
     e.preventDefault(); 
-    var textField = $('.js-form__text-area'); //class js-form__text-fieldを代入
-    var message = textField.val(); //js-form__text-fieldのフォームに入力された値を取得し、messageに代入
+    var $textField = $('.message-form__text-area'); //class js-form__text-fieldを代入
+    var message = $textField.val(); //js-form__text-fieldのフォームに入力された値を取得し、messageに代入
     $.ajax({
       url: window.location.href,
       type: 'POST',
@@ -34,10 +34,9 @@ $(function() {
     })
     //↓フォームの送信に成功した場合の処理
     .done(function(data) {
-      console.log(data);
       var html = buildHTML(data);
       $('ul.chat__main__body__chat').append(html); //ul.chat__main__body__chatを選択し、上の変数htmlを挿入している
-      textField.val('');
+      $textField.val('');
     })
     //↓フォームの送信に失敗した場合の処理
     .fail(function() {
