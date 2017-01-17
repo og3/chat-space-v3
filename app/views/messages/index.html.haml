@@ -28,10 +28,11 @@
       %ul.chat__main__body__chat
         = render partial: 'messages/message', collection: @messages
 
-    .chat__main__footer
-      = form_for [@group, @message], html: { class: 'form js-message-form' } do |f|
-        = f.text_area :message, placeholder: "type a message", class: 'chat__main__footer__type_message js-message-form__text-area' do
-          %label.chat__footer__file
+    .chat__message--input
+      = form_for [@group, @message] do |f|
+        .message-body
+          = f.text_field :message, placeholder: "メッセージを入力してください", class: "message-type" 
+          %label.chat-footer__file
             = f.file_field :image
             %i.fa.fa-image
-        = f.submit value: "Send", class: 'chat__main__footer__send_button'
+        = f.submit "Send", class: "send-button" 
