@@ -35,7 +35,9 @@ $(function() {
     //↓フォームの送信に成功した場合の処理
     .done(function(data) {
       var html = buildHTML(data);
-      $('ul.chat__main__body__chat').append(html); //ul.chat__main__body__chatを選択し、上の変数htmlを挿入している
+      //ul.chat__main__body__chatを選択し、上の変数htmlを挿入している
+      $('ul.chat__main__body__chat').append(html); 
+      // textfieldを空にする
       $textField.val('');
     })
     //↓フォームの送信に失敗した場合の処理
