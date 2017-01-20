@@ -51,10 +51,13 @@ $(function() {
       alert('error');
     });
 
+  });
+
     // file_fieldがchangeしたら発動。form_forをsubmitさせる。
-    $('#message-image').on('change', function(){
-      $(this).parents('#new_message').submit();
+    $('#message_image').on('change', function(){
+      console.log("ssss");
+      $('#new_message').submit();
       form.reset();
     });
-  });
+
 });
