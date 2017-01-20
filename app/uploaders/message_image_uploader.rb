@@ -1,4 +1,4 @@
-class MassageImageUploader < CarrierWave::Uploader::Base
+class MessageImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
