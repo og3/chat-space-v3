@@ -55,7 +55,6 @@ $(function() {
 
     // file_fieldがchangeしたら発動。form_forをsubmitさせる。
     $('#message_image').on('change', function(){
-      console.log("ssss");
       $('#new_message').submit();
       form.reset();
     });
