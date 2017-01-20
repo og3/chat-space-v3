@@ -33,6 +33,6 @@
         .message-body
           = f.text_field :message, placeholder: "メッセージを入力してください", class: "message-type" 
           %label.chat-footer__file
-            = f.file_field :image
+            = f.file_field :image, class: "message-image"
             %i.fa.fa-image
         = f.submit "Send", class: "send-button" 
