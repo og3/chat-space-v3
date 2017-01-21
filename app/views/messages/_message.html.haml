@@ -5,3 +5,6 @@
     = message.created_at
   %p.chat__main__body__chat__set__message 
     = message.message
+    / massage.imageがあった場合 image_tagでimage映す
+    %br
+    = image_tag message.image if message.image?

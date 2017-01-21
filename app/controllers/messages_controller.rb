@@ -17,6 +17,7 @@ class MessagesController < ApplicationController
           render json: {
             message: message.message,
             name: message.user.name,
+            image: message.image.url,
             datetime: message.created_at.strftime('%Y/%m/%d %H:%M:%S')
           }
         } #入力されたデータを変数に入れてJSの部分に返す
@@ -28,7 +29,7 @@ class MessagesController < ApplicationController
 
   private
   def create_params
-    params.require(:message).permit(:message).merge(user_id: current_user.id, group_id: params[:group_id]) #messageの入力を許可し、フォームで入力されないuser_id, group_idをmargeする
+    params.require(:message).permit(:message, :image).merge(user_id: current_user.id, group_id: params[:group_id]) #messageの入力を許可し、フォームで入力されないuser_id, group_idをmargeする
   end
 
   def set_group
