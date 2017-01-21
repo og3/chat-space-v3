@@ -43,7 +43,7 @@ $(function() {
       var html = buildHTML(data);
       //ul.chat__main__body__chatを選択し、上の変数htmlを挿入している
       $('ul.chat__main__body__chat').append(html); 
-      // textfieldを空にする
+      // formに入力された値を空にする
       form.reset();
     })
     //↓フォームの送信に失敗した場合の処理
@@ -53,7 +53,7 @@ $(function() {
 
   });
 
-    // file_fieldがchangeしたら発動。form_forをsubmitさせる。
+    // file_fieldがchangeしたら発動。form_forをsubmitさせる。この場所にあるのは処理の発動条件を独立させるため。
     $('#message_image').on('change', function(){
       $('#new_message').submit();
       form.reset();
