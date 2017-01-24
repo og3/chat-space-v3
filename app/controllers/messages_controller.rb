@@ -17,7 +17,7 @@ class MessagesController < ApplicationController
           render json: {
             message: message.message,
             name: message.user.name,
-            image: message.image.url,
+            image_url: message.image.url,
             datetime: message.created_at.strftime('%Y/%m/%d %H:%M:%S')
           }
         } #入力されたデータを変数に入れてJSの部分に返す

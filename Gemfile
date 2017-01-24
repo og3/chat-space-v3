@@ -62,6 +62,7 @@ gem 'rails-i18n' #rspecでのテスト時にtranslation missingというエラ�
 gem 'devise', '4.2.0'
 gem 'font-awesome-sass'
 gem "font-awesome-rails"
-gem 'haml-rails'
-gem 'fog'
+gem 'haml-rails' 
+# gem 'fog', require: 'fog/aws' #require: 'fog/aws'はawsにアップロードするための記述
+gem 'fog' 
 gem 'dotenv-rails'

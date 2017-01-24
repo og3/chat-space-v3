@@ -112,6 +112,7 @@
         float: left;
         width: 100%;
         &__set {
+          clear: left;
           margin-bottom: 10px;
           height: 70px;
           &__name {
@@ -221,3 +222,20 @@ a:hover{
   opacity: 0.8;
   border: none;
 }
+
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.chat__main__bodyt__chat__set__image {
+    font-size: 15px;
+    margin-top: 0px;
+    float: left;
+  img {
+    max-width: 100px;
+    max-height: 100px;
+  }
+}
+

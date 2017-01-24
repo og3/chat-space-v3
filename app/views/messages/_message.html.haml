@@ -1,4 +1,4 @@
-%li.chat__main__body__chat__set
+%li.chat__main__body__chat__set.clearfix
   %p.chat__main__body__chat__set__name
     = message.user.name
   %p.chat__main__body__chat__set__time_stamp 
@@ -6,5 +6,5 @@
   %p.chat__main__body__chat__set__message 
     = message.message
     / massage.imageがあった場合 image_tagでimage映す
-    %br
+  %p.chat__main__bodyt__chat__set__image
     = image_tag message.image if message.image?
