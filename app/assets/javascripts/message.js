@@ -1,8 +1,8 @@
 $(function() {
   function buildHTML(adddata) {
     // 引数adddataにimageが入っていたら、表示するhtmlを追加する
-    if(adddata.image){
-      var addImage = '<br><img src="' + adddata.image + '">';
+    if(adddata.image_url){
+      var addImage = '<br><img src="' + adddata.image_url + '">';
     }else{
       var addImage = '';
     }
@@ -54,9 +54,9 @@ $(function() {
   });
 
     // file_fieldがchangeしたら発動。form_forをsubmitさせる。この場所にあるのは処理の発動条件を独立させるため。
-    $('#message_image').on('change', function(){
-      $('#new_message').submit();
-      form.reset();
-    });
+    // $('#message_image').on('change', function(){
+    //   $('#new_message').submit();
+    //   form.reset();
+    // });
 
 });
