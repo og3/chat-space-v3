@@ -63,6 +63,6 @@ gem 'devise', '4.2.0'
 gem 'font-awesome-sass'
 gem "font-awesome-rails"
 gem 'haml-rails' 
-gem 'fog', require: 'fog/aws'
-# gem 'fog' # 特定のURLのファイルをS3へ保存する
-gem 'dotenv-rails' # 環境によって変わる設定値
+# gem 'fog', require: 'fog/aws' #require: 'fog/aws'はawsにアップロードするための記述
+gem 'fog' 
+gem 'dotenv-rails'
