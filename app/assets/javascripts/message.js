@@ -49,7 +49,7 @@ $(function() {
   $('.send-button').click('submit', function(e) {
 //フォームが送信された時に、デフォルトだとフォームを送信するための通信がされてしまうので、preventDefault()を使用してデフォルトのイベントを止める
     e.preventDefault(); 
-    ajax();
+    sendmessage();
 
   });
 
@@ -57,11 +57,11 @@ $(function() {
     $('#message_image').on('change', function(e){
 //フォームが送信された時に、デフォルトだとフォームを送信するための通信がされてしまうので、preventDefault()を使用してデフォルトのイベントを止める
       e.preventDefault(); 
-      ajax();
+      sendmessage();
     });
 
 // 非同期通信の処理
-  function ajax(){
+  function sendmessage(){
         // $('#new_message')はform_forで自動生成されたidで、すべての入力欄の親要素
     var form = $('#new_message').get(0);
     var formData = new FormData(form);
