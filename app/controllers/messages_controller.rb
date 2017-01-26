@@ -14,12 +14,12 @@ class MessagesController < ApplicationController
       respond_to do |format|
         format.html { redirect_to group_messages_path}
         format.json {
-          render json: {
-            message: message.message,
-            name: message.user.name,
-            image_url: message.image.url,
-            datetime: message.created_at.strftime('%Y/%m/%d %H:%M:%S')
-          }
+          # render json: {
+          #   message: message.message,
+          #   name: message.user.name,
+          #   image_url: message.image.url,
+          #   datetime: message.created_at.strftime('%Y/%m/%d %H:%M:%S')
+          # }
         } #入力されたデータを変数に入れてJSの部分に返す
       end
     else

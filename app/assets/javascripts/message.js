@@ -1,15 +1,34 @@
 $(function() {
+
+  var body = $(".chat__main__body")
+
+// 自動更新機能
+  function update() {
+    $.ajax(window.location.href, {
+      type: 'GET',
+      dataType: 'json',
+    })
+      autoscroll();
+  }
+
+// 自動更新呼び出し機能
+  $(function() {
+    update();
+    //関数update()を5000ミリ秒間隔で呼び出す
+    setInterval(update, 5000);
+  });
+
   // htmlを作成する機能
   function buildHTML(adddata) {
     // 引数adddataにimageが入っていたら、表示するhtmlを追加する
     if(adddata.image_url){
-      var addImage = '<br><img src="' + adddata.image_url + '">';
+      var addImage = '<img src="' + adddata.image_url + '">';
     }else{
       var addImage = '';
     }
 // 新規に入力された値を入れるhtmlを新規に作る。記法はHTMLで書く。
     var html =
-      '<li class="chat__main__body__chat__set">'              +
+      '<li class="chat__main__body__chat__set clearfix">'     +
         '<p class="chat__main__body__chat__set__name">'       +
           adddata.name                                        +
         '</p>'                                                +
@@ -18,6 +37,8 @@ $(function() {
         '</p>'                                                +
         '<p class="chat__main__body__chat__set__message">'    +
           adddata.message                                     +
+        '</p>'                                                +
+        '<p class="chat__main__bodyt__chat__set__image">'     +
           addImage                                            +
         '</p>'                                                +
       '</li>'
@@ -59,11 +80,17 @@ $(function() {
       $('ul.chat__main__body__chat').append(html); 
       // formに入力された値を空にする
       form.reset();
+      autoscroll();
     })
     //↓フォームの送信に失敗した場合の処理
     .fail(function() {
       alert('error');
     });
   }
+
+// スクロール機能
+  function autoscroll() {
+    body.animate({ scrollTop: body[0].scrollHeight}, 'normal')
+  };
 
 });
