@@ -70,3 +70,4 @@ gem 'haml-rails'
 # gem 'fog', require: 'fog/aws' #require: 'fog/aws'はawsにアップロードするための記述
 gem 'fog' 
 gem 'dotenv-rails'
+gem 'rake', '10.5.0'
